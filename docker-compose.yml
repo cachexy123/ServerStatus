@@ -9,7 +9,7 @@ services:
       - ./json:/usr/share/nginx/html/json
     ports:
       - 35601:35601
-      - 8081:80 
+      - 30000:80 
   bot:
     build:
       context: .
