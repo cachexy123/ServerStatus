@@ -13,7 +13,7 @@ import subprocess
 import uuid
 
 CONFIG_FILE = "config.json"
-GITHUB_RAW_URL = "https://raw.githubusercontent.com/lidalao/ServerStatus/master"
+GITHUB_RAW_URL = "https://raw.githubusercontent.com/cachexy123/ServerStatus/master"
 IP_URL = "https://api.ipify.org"
 
 jjs = {}
@@ -211,7 +211,6 @@ def remove():
 def cmd():
     print("\n")
     print('- - - 欢迎使用最简洁的探针: Server Status - - -')
-    print('详细教程请参考：https://lidalao.com/archives/87')
     print("\n")
     _show()
     print("\n")
