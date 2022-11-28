@@ -111,7 +111,7 @@ def tupd():
     tcp, udp, process, thread count: for view ddcc attack , then send warning
     :return:
     '''
-    return 0,0,0,0
+    
     
     s = subprocess.check_output("ss -t|wc -l", shell=True)
     t = int(s[:-1])-1
