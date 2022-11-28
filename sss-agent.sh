@@ -4,13 +4,13 @@
 #   System Required: CentOS 7+ / Debian 8+ / Ubuntu 16+ /
 #     Arch 未测试
 #   Description: Server Status 监控安装脚本
-#   Github: https://github.com/lidalao/ServerStatus
+#   Github: https://github.com/cachexy123/ServerStatus
 #========================================================
 
 SSS_BASE_PATH="/opt/sss"
 SSS_AGENT_PATH="${SSS_BASE_PATH}/agent"
 SSS_AGENT_SERVICE="/etc/systemd/system/sss-agent.service"
-GITHUB_RAW_URL="https://raw.githubusercontent.com/lidalao/ServerStatus/master"
+GITHUB_RAW_URL="https://raw.githubusercontent.com/cachexy123/ServerStatus/master"
 
 red='\033[0;31m'
 green='\033[0;32m'
@@ -97,7 +97,7 @@ uninstall_agent() {
 show_menu() {
     echo -e "
     ${green}Server Status监控管理脚本${plain}
-    --- https://github.com/lidalao/sss ---
+    --- https://github.com/cachexy/sss ---
     ${green}1.${plain}  安装监控Agent
     ${green}2.${plain}  卸载Agent
     ${green}0.${plain}  退出脚本
