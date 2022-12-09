@@ -71,10 +71,10 @@ def saveJJs():
     file.close()
 
 def _show():
-    print("---你的jjs如下---")
+    print("---你的服务器如下---")
     print("\n")
     if len(jjs['servers']) == 0:
-        print('>>> 你好MJJ, 暂时没发现你有任何jj! <<<')
+        print('>>> 你好, 暂时没发现你有任何服务器! <<<')
         print("\n")
         print("-----------------")
         return
@@ -95,7 +95,7 @@ def _back():
     cmd()
 
 def add():
-    print('>>>请输入jj名字：')
+    print('>>>请输入服务器名字：')
     jjname =input()    
     if jjname == "":
         print("输入有误")
@@ -133,7 +133,7 @@ def add():
     _back()
 
 def update():
-    print("请输入需要更新的jj标号：")
+    print("请输入需要更新的服务器标号：")
     idx = input()
     if not idx.isnumeric():
         print('无效输入,退出')
@@ -181,7 +181,7 @@ def update():
     _back()
 
 def remove():
-    print(">>>请输入需要删除的jj标号：")
+    print(">>>请输入需要删除的服务器标号：")
     idx =input()
     if not idx.isnumeric():
         print('无效输入,退出')
