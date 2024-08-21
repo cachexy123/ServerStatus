@@ -1,5 +1,5 @@
-# 介绍
-纯纯自用
+# 介绍(纯纯自用)
+
 
 
 项目基于cppla版本ServerStatus， 增加如下功能：
@@ -12,13 +12,13 @@
 
 
 # 安装
-在**服务端**复制以下命令，一键到底。请记得替换成你自己的YOUR_TG_CHAT_ID和YOUR_TG_BOT_TOKEN。
+在**服务端**复制以下命令，一键到底。
+如需tg bot通知 自行修改docker-compose.bot.yml
 
 其中，Bot token可以通过@BotFather创建机器人获取， Chat id可以通过@getuserID获取。
 
 ```
-mkdir sss && cd sss && wget --no-check-certificate https://raw.githubusercontent.com/cachexy123/ServerStatus/master/sss.sh && chmod +x ./sss.sh && ./sss.sh YOUR_TG_CHAT_ID YOUR_TG_BOT_TOKEN
-
+mkdir sss && cd sss && wget --no-check-certificate https://raw.githubusercontent.com/cachexy123/ServerStatus/master/sss.sh && chmod +x ./sss.sh && ./sss.sh 
 ```
 安装成功后，web服务地址：http://ip:8081
 
@@ -28,3 +28,4 @@ mkdir sss && cd sss && wget --no-check-certificate https://raw.githubusercontent
 # 参考
 - https://github.com/cppla/ServerStatus
 - https://github.com/naiba/nezha
+- https://github.com/lidalao/ServerStatus
