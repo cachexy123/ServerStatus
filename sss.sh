@@ -4,7 +4,7 @@
 #   System Required: CentOS 7+ / Debian 8+ / Ubuntu 16+ /
 #     Arch 未测试
 #   Description: Server Status 监控安装脚本
-#   Github: https://github.com/lidalao/ServerStatus
+#   Github: https://github.com/cachexy123/ServerStatus
 #========================================================
 
 GITHUB_RAW_URL="https://raw.githubusercontent.com/cachexy123/ServerStatus/master"
@@ -73,20 +73,6 @@ install_docker() {
     fi
 }
 
-
-modify_bot_config(){
-    if [[ $# < 2 ]]; then
-        echo -e "${red}参数错误，未能正确提供tg bot信息，请手动修改docker-compse.yml中的bot信息 ${plain}"
-        exit 1
-    fi
-    
-    tg_chat_id=$1
-    tg_bot_token=$2
-
-    sed -i "s/tg_chat_id/${tg_chat_id}/" docker-compose.yml
-    sed -i "s/tg_bot_token/${tg_bot_token}/" docker-compose.yml
-}
-
 install_dashboard(){ 
     
     install_docker
@@ -102,8 +88,6 @@ install_dashboard(){
     wget --no-check-certificate ${GITHUB_RAW_URL}/bot.py >/dev/null 2>&1
     wget --no-check-certificate ${GITHUB_RAW_URL}/_sss.py >/dev/null 2>&1
     echo '{"servers":[]}' > config.json
-    
-    modify_bot_config "$@"
 
     echo -e "> 启动面板"
     (docker-compose up -d)  >/dev/null 2>&1
@@ -113,7 +97,17 @@ nodes_mgr(){
     python3 _sss.py
 }
 
+necessary_files=("docker-compose.yml" "Dockerfile" "bot.py" "_sss.py")
+all_files_exist=true
+for file in "${necessary_files[@]}"; do
+    if [ ! -f "$file" ]; then
+        all_files_exist=false
+        break
+    fi
+done
 
 pre_check
-install_dashboard "$@"
+if [ "$all_files_exist" = false ]; then
+    install_dashboard "$@"
+fi
 nodes_mgr
