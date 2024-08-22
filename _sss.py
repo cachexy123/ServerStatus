@@ -3,7 +3,7 @@
 # Create by : https://github.com/lidalao/ServerStatus
 # 版本：0.0.1, 支持Python版本：2.7 to 3.9
 # 支持操作系统： Linux, OSX, FreeBSD, OpenBSD and NetBSD, both 32-bit and 64-bit architectures
-
+import readline
 import json
 import sys
 import os
