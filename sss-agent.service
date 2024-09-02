@@ -17,8 +17,11 @@ Group=root
 WorkingDirectory=/opt/sss/agent/
 ExecStart=/usr/bin/python3 /opt/sss/agent/client-linux.py SERVER=sss_host USER=sss_user PASSWORD=sss_pass
 Restart=always
+RestartSec=0  # 立即重启
 #Environment=DEBUG=true
-
+# 每4小时重启一次
+ExecStartPost=/bin/sleep 14400
+ExecStartPost=/bin/systemctl restart server-status-agent.service
 # Some distributions may not support these hardening directives. If you cannot start the service due
 # to an unknown option, comment out the ones not supported by your version of systemd.
 #ProtectSystem=full
