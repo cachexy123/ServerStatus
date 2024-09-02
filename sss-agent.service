@@ -19,8 +19,7 @@ ExecStart=/usr/bin/python3 /opt/sss/agent/client-linux.py SERVER=sss_host USER=s
 Restart=always
 RestartSec=0  # 立即重启
 #Environment=DEBUG=true
-# 每4小时重启一次
-ExecStartPost=/bin/bash -c 'sleep 14400 & systemctl restart sss-agent.service'
+ExecStartPre=/bin/bash -c 'systemctl restart sss-agent.service; sleep 14400'
 # Some distributions may not support these hardening directives. If you cannot start the service due
 # to an unknown option, comment out the ones not supported by your version of systemd.
 #ProtectSystem=full
