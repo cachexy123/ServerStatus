@@ -17,7 +17,7 @@ Group=root
 WorkingDirectory=/opt/sss/agent/
 ExecStart=/bin/bash -c '/usr/bin/python3 /opt/sss/agent/client-linux.py SERVER=sss_host USER=sss_user PASSWORD=sss_pass; sleep 14400; systemctl restart sss-agent.service'
 Restart=always
-RestartSec=0  # 立即重启
+RestartSec=1
 #Environment=DEBUG=true
 #ExecStartPre=/bin/bash -c 'systemctl restart sss-agent.service; sleep 14400'
 # Some distributions may not support these hardening directives. If you cannot start the service due
